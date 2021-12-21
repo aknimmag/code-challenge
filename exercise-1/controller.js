@@ -13,7 +13,6 @@ function getUserInfo() {
 
 // Function to define innerHTML for HTML unordered list
 function displayData(data) {
-    console.log('raw data->', data);
     data.forEach(element => element.createdAt = dateFormatter(element.createdAt) ); // Timestamp to Date string
     const list = document.getElementById('afUsers');
     const unOrderedData = `<ul> 
