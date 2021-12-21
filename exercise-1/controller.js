@@ -20,8 +20,8 @@ function displayData(data) {
                 <li>
                  <div> 
                  <h4> Name: <strong> {{this.name}} </strong> </h4> 
-                 <img src={{this.avatar}} alt= 'Image not available'> 
-                 <button type=button onclick='clickHandler({{this.id}})'>More info</button>
+                 <img class="img" src={{this.avatar}} alt= 'Image not available'> 
+                 <button class="button" type=button onclick='clickHandler({{this.id}})'>More info</button>
                  <p id={{this.id}} style = 'display: none'> ID : {{this.id}} is created at {{this.createdAt}} </p>
                  </div>
                  </li>
