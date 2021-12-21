@@ -14,6 +14,7 @@ function getUserInfo() {
 // Function to define innerHTML for HTML unordered list
 function displayData(data) {
     console.log('raw data->', data);
+    data.forEach(element => element.createdAt = dateFormatter(element.createdAt) ); // Timestamp to Date string
     const list = document.getElementById('afUsers');
     const unOrderedData = `<ul> 
                 {{#each data}} 
@@ -41,4 +42,16 @@ function clickHandler(id) {
     } else { // Hide
         x.style.display = 'none';
     }
+}
+
+// Formatting timestamp to the readable data
+function dateFormatter(timeStamp) {
+var date = new Date(timeStamp);
+
+return(date.getDate()+
+          "/"+(date.getMonth()+1)+
+          "/"+date.getFullYear()+
+          " "+date.getHours()+
+          ":"+date.getMinutes()+
+          ":"+date.getSeconds());
 }
