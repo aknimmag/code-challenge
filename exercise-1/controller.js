@@ -1,19 +1,19 @@
 // api url
 const api_url =
-	'https://615485ee2473940017efaed3.mockapi.io/assessment';
+    'https://615485ee2473940017efaed3.mockapi.io/assessment';
 
 // Defining function
-	function getUserInfo() {
-		fetch(api_url)
-			.then(response => response.json())
-			.then(data => {
-				displayData(data)
-			});
-	}
+function getUserInfo() {
+    fetch(api_url)
+        .then(response => response.json())
+        .then(data => {
+            displayData(data)
+        });
+}
 
 // Function to define innerHTML for HTML unordered list
 function displayData(data) {
-	console.log('raw data->', data);
+    console.log('raw data->', data);
     const list = document.getElementById('afUsers');
     const unOrderedData = `<ul> 
                 {{#each data}} 
@@ -28,7 +28,9 @@ function displayData(data) {
                  {{/each}} 
                  </ul>`;
     const template = Handlebars.compile(unOrderedData);
-    list.innerHTML = template({ data: data });
+    list.innerHTML = template({
+        data: data
+    });
 }
 
 // Click handler
